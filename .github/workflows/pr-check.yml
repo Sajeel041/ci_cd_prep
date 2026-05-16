@@ -9,9 +9,9 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - name:checkout
+      -name:checkout
         uses: actions/checkout@v4
-      -name: print branch info
+      - name: print branch info
         run: |
           echo "PR opened by: ${{ github.actor }}"
           echo "branch: ${{ github.head_ref }}"
