@@ -1,18 +1,21 @@
 name: PR Check
 
 on:
-  pull-request:
+  pull_request:
     branches: [main]
+
   workflow_dispatch:
 
 jobs:
   check:
     runs-on: ubuntu-latest
+
     steps:
-      -name:checkout
+      - name: Checkout
         uses: actions/checkout@v4
-      - name: print branch info
+
+      - name: Print branch info
         run: |
           echo "PR opened by: ${{ github.actor }}"
-          echo "branch: ${{ github.head_ref }}"
-          echo "Target: ${{ github.bese_ref }}"
+          echo "Branch: ${{ github.head_ref }}"
+          echo "Target: ${{ github.base_ref }}"
